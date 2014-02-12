@@ -8,8 +8,7 @@ import android.os.Bundle;
 
 
 /**
- *½çÃæÖ®¼äÌø×ª¼°¿ØÖÆ
- *
+ *ç•Œé¢ä¹‹é—´è·³è½¬åŠæ§åˆ¶
  */
 public class UIController {
 	public static final void showNewUIMain(Context context, Bundle extras) {
