@@ -16,5 +16,16 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="CustomTitlePageIndicator"> 
+    <item name="android:background">@drawable/general_title_two</item>  
+    <item name="footerColor">#FF279DE7</item>  
+    <item name="footerLineHeight">1dp</item>  
+    <item name="footerIndicatorHeight">4dp</item>  
+    <item name="footerIndicatorStyle">underline</item>  
+    <item name="android:textColor">#AAE6E6E6</item>  
+    <item name="selectedColor">#FFE6E6E6</item>  
+    <item name="selectedBold">false</item> 
+    </style>
 
 </resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">  
+  <!-- CellLayout 单个屏幕布局 -->  
+  <declare-styleable name="DocIndicator"> 
+    <attr name="lightImage" format="integer"/>  
+    <attr name="darkImage" format="integer"/>  
+    <attr name="dotWidth" format="dimension"/>  
+    <attr name="total" format="integer"/>  
+    <attr name="current" format="integer"/>  
+    <attr name="dotPadding" format="dimension"/> 
+  </declare-styleable>  
+
+    
+</resources>

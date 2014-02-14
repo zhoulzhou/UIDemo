@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:iknow="http://schemas.android.com/apk/res/com.example.uidemo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dip"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <com.example.uidemo.ui.widget.DocIndicator
+        android:id="@+id/indicator"
+        android:layout_width="30dip"
+        android:layout_height="6dp"
+        iknow:current="0"
+        iknow:darkImage="@drawable/ic_dot_unselected"
+        iknow:dotPadding="6dp"
+        iknow:dotWidth="6dp"
+        iknow:lightImage="@drawable/ic_dot_selected"
+        iknow:total="3" />
+
+</LinearLayout>
