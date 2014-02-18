@@ -1,5 +1,6 @@
 package com.example.uidemo;
 
+import com.example.uidemo.base.BaseFragmentActivity;
 import com.example.uidemo.ui.UIController;
 
 import android.app.Activity;
@@ -9,7 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
-public class SplashActivity extends Activity{
+public class SplashActivity extends BaseFragmentActivity{
 	StartTask mLoadingTask;
 	Bundle mExtraBundle = null;
 	Context mContext = null;

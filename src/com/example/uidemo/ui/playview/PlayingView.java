@@ -2,18 +2,22 @@ package com.example.uidemo.ui.playview;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.uidemo.R;
 import com.example.uidemo.base.BaseFrameLayout;
 import com.example.uidemo.ui.widget.DocIndicator;
 
-public class PlayingView extends BaseFrameLayout{
+public class PlayingView extends BaseFrameLayout implements OnPageChangeListener{
 	private PlayerPager mPager;
 	private View mIndicatorLayout;
 	private DocIndicator mDocIndicator;
@@ -40,8 +44,11 @@ public class PlayingView extends BaseFrameLayout{
 	}
 	
 	private void init(){
+		log("playingview init ");
 		mPager = new PlayerPager(getContext());
+		mPager.setOnPageChangeListener(this);
 		mIndicatorLayout = LayoutInflater.from(getContext()).inflate(R.layout.player_indicator, null);
+		mIndicatorLayout.setBackgroundColor(Color.GRAY);
 		mDocIndicator = (DocIndicator) mIndicatorLayout.findViewById(R.id.indicator);
 		
 		if (mAdapter == null) {
@@ -61,6 +68,7 @@ public class PlayingView extends BaseFrameLayout{
 	@Override
 	protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
 		// TODO Auto-generated method stub
+		log("playingview onlayout");
 	    int w = getWidth();
 	    int h = getHeight();
 	    int barHeight = (int) (BAR_HEIGHT * density);
@@ -155,10 +163,22 @@ public class PlayingView extends BaseFrameLayout{
 			View view = null;
 			if (position == 0) {
 //				view = mPlayQueueView;
+				TextView tv = new TextView(getContext());
+				tv.setText("first view ");
+				view = tv;
+				view.setBackgroundColor(Color.RED);
 			} else if (position == 1) {
 //				view = mAlbumView;
+				TextView tv = new TextView(getContext());
+				tv.setText("second view ");
+				view = tv;
+				view.setBackgroundColor(Color.GREEN);
 			} else if (position == 2) {
 //				view = mLyricView;
+				TextView tv = new TextView(getContext());
+				tv.setText("third view ");
+				view = tv;
+				view.setBackgroundColor(Color.BLUE);
 			}
 			container.addView(view);
 			return view;
@@ -169,6 +189,7 @@ public class PlayingView extends BaseFrameLayout{
 	class PlayerContainerView extends BaseFrameLayout {
 		public PlayerContainerView(Context context) {
 			super(context);
+			log("playercontainer init");
 			addView(mPager);
 			addView(mIndicatorLayout);
 		}
@@ -176,6 +197,7 @@ public class PlayingView extends BaseFrameLayout{
 		@Override
 		protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
 			// TODO Auto-generated method stub
+			log("playerContainerview onlayout");
 			int w = getWidth();
 			int h = getHeight();
 			
@@ -193,4 +215,22 @@ public class PlayingView extends BaseFrameLayout{
 		}
 	}
 	
+	private void log(String s) {
+		Log.d("zhou",s);
+	}
+
+	@Override
+	public void onPageScrollStateChanged(int arg0) {
+		//handle something
+	}
+
+	@Override
+	public void onPageScrolled(int arg0, float arg1, int arg2) {
+		//handle something 
+	}
+
+	@Override
+	public void onPageSelected(int arg0) {
+		mDocIndicator.setCurrent(arg0);
+	}
 }

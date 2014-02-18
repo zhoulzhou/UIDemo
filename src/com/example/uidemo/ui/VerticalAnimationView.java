@@ -397,7 +397,7 @@ public class VerticalAnimationView extends ViewGroup{
 
 	}
     private void log(String log){
-    	Log.d("VerticalAnimationView",log);
+    	Log.d("zhou",log);
     }
 
 }

@@ -5,7 +5,9 @@
     android:layout_height="wrap_content"
     android:paddingTop="8dip"
     android:gravity="center"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    
+     >
 
     <com.example.uidemo.ui.widget.DocIndicator
         android:id="@+id/indicator"

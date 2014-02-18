@@ -15,11 +15,15 @@
        android:layout_width="match_parent"
        android:layout_alignParentBottom="true"
        android:text=" bottom view "
+       android:background="@color/vpi__bright_foreground_holo_dark"
        />
-   
+
    <com.example.uidemo.ui.VerticalAnimationView
-        android:id="@+id/vav"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+       android:id="@+id/vav"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentTop="true" >
+   </com.example.uidemo.ui.VerticalAnimationView>
    
 </RelativeLayout>
