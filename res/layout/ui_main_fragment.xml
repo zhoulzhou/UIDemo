@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff2f4f5" >
+
+    <LinearLayout
+        android:id="@+id/tab_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" >
+
+        <RelativeLayout
+            android:id="@+id/tab_my_music_lay"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tab_my_music"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:drawablePadding="0dp"
+                android:gravity="center"
+                android:paddingTop="6dp"
+                android:text="我的音乐"
+                android:layout_centerHorizontal="true"
+                android:textSize="12dip" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tab_local_music"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:paddingTop="6dp"
+            android:text="本地音乐"
+            android:textSize="12dip" />
+
+        <TextView
+            android:id="@+id/tab_online_music"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:paddingTop="6dp"
+            android:text="在线音乐"
+            android:textSize="12dip" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/mymusic_container"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/tab_title" />
+
+    <FrameLayout
+        android:id="@+id/local_container"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/tab_title" />
+
+    <FrameLayout
+        android:id="@+id/online_container"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/tab_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/tab_title"
+        android:background="#c0c8cc" />
+
+    <!-- <ImageView -->
+    <!-- android:id="@+id/tab_shadow" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_below="@id/tab_title" -->
+    <!-- android:background="@drawable/bg_titlebar_shadow" -->
+    <!-- /> -->
+
+</RelativeLayout>
