@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2012 Jake Wharton
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+     >
+
+    <!-- 主界面tab -->
+
+    <LinearLayout
+        android:id="@+id/tab_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="32dp"
+        android:gravity="center_vertical" >
+
+        <!-- android:background="@drawable/bg_tab" -->
+
+        <TextView
+            android:id="@+id/local_favsongs"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="收藏" />
+
+        <TextView
+            android:id="@+id/local_allsongs"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="歌曲" />
+
+        <TextView
+            android:id="@+id/local_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="歌手" />
+
+        <TextView
+            android:id="@+id/local_ablum"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="专辑" />
+
+        <TextView
+            android:id="@+id/local_folder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="文件夹" />
+    </LinearLayout>
+
+    <!-- 主界面滑块
+
+    <com.viewpagerindicator.UnderlinePageIndicator
+        android:id="@+id/indicator"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="-4dp"
+        android:background="#00cccccc"
+        android:visibility="gone" />
+         -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/tab_bar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dip"
+        android:layout_below="@id/tab_bar"/>
+
+    <LinearLayout
+        android:id="@+id/notification_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+    	android:background="#fff2f4f5"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <!--android:paddingBottom="@dimen/ui_mini_bar_height"  -->
+
+        <ImageView
+            android:id="@+id/empty_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_launcher"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/empty_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="无空"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:lineSpacingExtra="6dip"
+            android:text="没有数据"
+            android:textColor="#96a1a7"
+            android:textSize="12dip"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/scan_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:gravity="center"
+            android:paddingLeft="13dip"
+            android:paddingRight="13dip"
+            android:text="扫描"
+            android:textColor="#667780"
+            android:textSize="12dip" />
+        
+        <TextView
+            android:id="@+id/pcsync_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dip"
+            android:gravity="center"
+            android:paddingLeft="18dip"
+            android:paddingRight="18dip"
+            android:text="同步"
+            android:textColor="#667780"
+            android:textSize="12dip" />
+    </LinearLayout>
+
+</RelativeLayout>
