@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class BaseFragment extends Fragment {
-
+	protected boolean mInited = false;
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -41,6 +41,7 @@ public class BaseFragment extends Fragment {
 	public void onDestroyView() {
 		// TODO Auto-generated method stub
 		super.onDestroyView();
+		mInited = false;
 	}
 
 	@Override
@@ -80,6 +81,7 @@ public class BaseFragment extends Fragment {
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onViewCreated(view, savedInstanceState);
+		mInited = true;
 	}
 	
 	public String getKey() {
