@@ -104,6 +104,8 @@ public class LocalSongFragment extends TabLocalFragment{
 		protected void onDataChanged(Cursor data) {
 			// TODO Auto-generated method stub
 			
+			//下载数据后显示view 并gone掉Loadingview
+//			showContainerView();
 		}
 
 		@Override

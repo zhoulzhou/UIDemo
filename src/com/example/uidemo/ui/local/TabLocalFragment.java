@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class TabLocalFragment extends BaseLocalFragment{
 	protected ListView mList;
@@ -20,6 +21,8 @@ public class TabLocalFragment extends BaseLocalFragment{
 	protected View mFootView;
 	protected LocalListViewAbstractFactory mFactory;
 	protected BaseAdapter mAdapter;
+	protected TextView mFootText;
+	protected boolean mInit = false;
 
 	@Override
 	public void onStorageChange(boolean mounted, Bundle data) {
@@ -31,6 +34,12 @@ public class TabLocalFragment extends BaseLocalFragment{
 			Bundle savedInstanceState) {
 		mContainView = inflater.inflate(R.layout.ui_tab_local, null);
 		mList = (ListView) mContainView.findViewById(R.id.local_list);
+		
+		if (!mInit) {
+			mInit = true;
+//			showLoadingDialog();
+		}
+		
 		return mContainView;
 	}
 
@@ -45,6 +54,8 @@ public class TabLocalFragment extends BaseLocalFragment{
 		}
 		
 		mList.setAdapter(mAdapter);
+		
+		//显示loadingView
 	}
 
 	@Override
@@ -104,6 +115,7 @@ public class TabLocalFragment extends BaseLocalFragment{
 		mList = null;
 		mContainView = null;
 		mAdapter = null;
+		mFootText = null;
 	}
 	
 	protected void closeCursor(Cursor cursor) {
@@ -121,4 +133,23 @@ public class TabLocalFragment extends BaseLocalFragment{
 		getLoaderManager().initLoader(mFactory.getLoaderCallbackId(), null, mFactory.createLoaderCallback());
 	}
 	
+	protected void updateBottomBar(int number) {
+		if (mFactory != null) {
+			mFootText.setText(mFactory.getFooterText(number));
+		} else {
+			mFootText.setText("");
+		}
+	}
+	
+	protected void showContainerView(){
+		//去掉loadingView 显示containerview
+		//mLoadingView.setVisibility(View.GONE);
+		mList.setVisibility(View.VISIBLE);
+	}
+	protected void showLoadingDialog() {
+
+//		mLoadView.setVisibility(View.VISIBLE);
+		mList.setVisibility(View.GONE);
+//		mLoadView.showLoading();
+   }
 }
