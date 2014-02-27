@@ -7,10 +7,12 @@ import com.example.uidemo.ui.playview.PlayingFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-public class MainActivity extends BaseFragmentActivity {
+public class MainActivity extends BaseFragmentActivity implements OnClickListener{
 	private TextView mBottomText;
 	private VerticalAnimationView mPlayView;
 	ViewGroup mCoreView;
@@ -23,6 +25,7 @@ public class MainActivity extends BaseFragmentActivity {
 		setContentView(R.layout.activity_main);
 		
 		mBottomText = (TextView) findViewById(R.id.bottomview);
+		mBottomText.setOnClickListener(this);
 		mPlayView = (VerticalAnimationView) findViewById(R.id.vav);
 		
 //		showPlayerView();
@@ -56,6 +59,19 @@ public class MainActivity extends BaseFragmentActivity {
 			}
 			
 		}, 100);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		int id = v.getId();
+		switch(id){
+		case R.id.bottomview:
+			showPlayerView();
+			break;
+		default :
+			break;
+		}
 	}
 
 }

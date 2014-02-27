@@ -5,8 +5,10 @@ import com.example.uidemo.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 public class LocalSongAdapter extends BaseAdapter{
 	private Context mContext;
@@ -39,7 +41,17 @@ public class LocalSongAdapter extends BaseAdapter{
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
-		return mInflater.inflate(R.layout.ui_local_song_item, null);
+		View v =  mInflater.inflate(R.layout.ui_local_song_item, null);
+		TextView tv = (TextView ) v.findViewById(R.id.tv);
+		tv.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		return v;
 	}
 	
 }
