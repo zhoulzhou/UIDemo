@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff2f4f5"
+    android:clickable="true"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        
+    />
+    
+    <include
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/loading_layout"
+        android:paddingTop="77dip" /> 
+    
+</LinearLayout>

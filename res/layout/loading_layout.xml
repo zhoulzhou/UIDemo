@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.uidemo.ui.loadingview.CellListLoading xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
+
+        <LinearLayout
+            android:id="@+id/net"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/netImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/netTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:gravity="center"
+                android:textColor="#96a1a7"
+                android:textSize="16dip" />
+
+            <TextView
+                android:id="@+id/netSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#96a1a7"
+                android:textSize="12dip" />
+
+            <Button
+                android:id="@+id/netBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dip"
+                android:background="@drawable/bt_button"
+                android:gravity="center"
+                android:paddingLeft="13dip"
+                android:paddingRight="13dip"
+                android:textColor="#667780"
+                android:textSize="12dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/emptyImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/emptyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:gravity="center"
+                android:textColor="#96a1a7"
+                android:textSize="16dip" />
+
+            <TextView
+                android:id="@+id/emptySubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#96a1a7"
+                android:textSize="12dip" />
+
+            <Button
+                android:id="@+id/emptyBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dip"
+                android:background="@drawable/bt_button"
+                android:gravity="center"
+                android:paddingLeft="13dip"
+                android:paddingRight="13dip"
+                android:textColor="#667780"
+                android:textSize="12dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/loadingview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="34.6667dip"
+                android:layout_height="34.6667dip"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/loading" />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="8dip"
+                android:text="音乐马上就来"
+                android:textColor="#96a1a7"
+                android:textSize="16dip" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</com.example.uidemo.ui.loadingview.CellListLoading>

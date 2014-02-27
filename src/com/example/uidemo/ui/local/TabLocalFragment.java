@@ -1,6 +1,7 @@
 package com.example.uidemo.ui.local;
 
 import com.example.uidemo.R;
+import com.example.uidemo.ui.loadingview.CellListLoading;
 
 import android.app.Activity;
 import android.database.Cursor;
@@ -23,6 +24,7 @@ public class TabLocalFragment extends BaseLocalFragment{
 	protected BaseAdapter mAdapter;
 	protected TextView mFootText;
 	protected boolean mInit = false;
+	public CellListLoading mLoadView;
 
 	@Override
 	public void onStorageChange(boolean mounted, Bundle data) {
@@ -34,10 +36,11 @@ public class TabLocalFragment extends BaseLocalFragment{
 			Bundle savedInstanceState) {
 		mContainView = inflater.inflate(R.layout.ui_tab_local, null);
 		mList = (ListView) mContainView.findViewById(R.id.local_list);
+		mLoadView = (CellListLoading) mContainView.findViewById(R.id.loading);
 		
 		if (!mInit) {
 			mInit = true;
-//			showLoadingDialog();
+			showLoadingDialog();
 		}
 		
 		return mContainView;
@@ -143,13 +146,14 @@ public class TabLocalFragment extends BaseLocalFragment{
 	
 	protected void showContainerView(){
 		//去掉loadingView 显示containerview
-		//mLoadingView.setVisibility(View.GONE);
+		Log.d("zhou","show container view");
+		mLoadView.setVisibility(View.GONE);
 		mList.setVisibility(View.VISIBLE);
 	}
 	protected void showLoadingDialog() {
-
-//		mLoadView.setVisibility(View.VISIBLE);
+        Log.d("zhou","show loading view");
+		mLoadView.setVisibility(View.VISIBLE);
 		mList.setVisibility(View.GONE);
-//		mLoadView.showLoading();
+		mLoadView.showLoading();
    }
 }
