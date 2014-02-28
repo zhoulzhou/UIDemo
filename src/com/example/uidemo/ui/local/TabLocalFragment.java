@@ -40,7 +40,7 @@ public class TabLocalFragment extends BaseLocalFragment{
 		
 		if (!mInit) {
 			mInit = true;
-//			showLoadingDialog();
+			showLoadingDialog();
 		}
 		
 		return mContainView;

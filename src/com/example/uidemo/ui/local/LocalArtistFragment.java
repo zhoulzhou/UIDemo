@@ -101,7 +101,7 @@ public class LocalArtistFragment extends TabLocalFragment{
 				return ;
 			}
 			mAdapter.swapCursor(data);
-//			showContainerView();
+			showContainerView();
 		}
 
 		@Override
