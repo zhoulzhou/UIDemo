@@ -40,7 +40,7 @@ public class TabLocalFragment extends BaseLocalFragment{
 		
 		if (!mInit) {
 			mInit = true;
-			showLoadingDialog();
+//			showLoadingDialog();
 		}
 		
 		return mContainView;
@@ -58,6 +58,7 @@ public class TabLocalFragment extends BaseLocalFragment{
 		
 		mList.setAdapter(mAdapter);
 		
+		getLoaderManager().initLoader(mFactory.getLoaderCallbackId(), null, mFactory.getLoaderCallback());
 		//显示loadingView
 	}
 
@@ -144,10 +145,15 @@ public class TabLocalFragment extends BaseLocalFragment{
 		}
 	}
 	
+	protected void dismissLoadingView(){
+		mLoadView.setVisibility(View.GONE);
+		mList.setVisibility(View.VISIBLE);
+		return ;
+	}
+	
 	protected void showContainerView(){
 		//去掉loadingView 显示containerview
 		Log.d("zhou","show container view");
-		mLoadView.setVisibility(View.GONE);
 		mList.setVisibility(View.VISIBLE);
 	}
 	protected void showLoadingDialog() {
