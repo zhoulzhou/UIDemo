@@ -79,8 +79,9 @@ public class ViewContainer extends ViewGroup{
 		    int childW = child.getMeasuredWidth();
 		    int childH = child.getMeasuredHeight();
 		    log("childW= " +  childW + " childH= " + childH);
-			child.layout(l1, t1, child.getWidth(), child.getHeight() + t1);
+			child.layout(l1, t1, childW, childH+ t1);
 			t1 = t1 + child.getHeight();
+			log("t1= " + t1);
 		}
 	}
 	
