@@ -85,25 +85,6 @@ public class ViewContainer extends ViewGroup{
 		}
 	}
 	
-	private int measureWidth(int measureSpec) {
-	    int result = 0;
-	    int specMode = MeasureSpec.getMode(measureSpec);
-	    int specSize = MeasureSpec.getSize(measureSpec);
-	    if (specMode == MeasureSpec.EXACTLY) {
-	        // We were told how big to be
-	        result = specSize;
-	    } else {
-	        // Measure the text
-//	        result = (int) mTextPaint.measureText(mText) + getPaddingLeft()
-//	                + getPaddingRight();
-	        if (specMode == MeasureSpec.AT_MOST) {
-	            // Respect AT_MOST value if that was what is called for by measureSpec
-	            result = Math.min(result, specSize);
-	        }
-	    }
-	    return result;
-	}
-	
 	private void log(String s){
 		Log.d("zhou",s);
 	}
