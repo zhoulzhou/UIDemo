@@ -62,10 +62,10 @@ public class ViewContainer extends ViewGroup{
 		log("onmeasure");
 		setMeasuredDimension(MeasureSpec.getSize(widthMeasureSpec),MeasureSpec.getSize(heightMeasureSpec));
 		int count = getChildCount();
-		for(int i=0; i<count; i++){
-			View child = getChildAt(i);
-			child.measure(widthMeasureSpec, heightMeasureSpec);
-		}
+//		for(int i=0; i<count; i++){
+//			View child = getChildAt(i);
+//			child.measure(widthMeasureSpec, heightMeasureSpec);
+//		}
 	}
 	
 	@Override
@@ -77,7 +77,7 @@ public class ViewContainer extends ViewGroup{
 			View child = getChildAt(i);
 		    int childW = child.getMeasuredWidth();
 		    int childH = child.getMeasuredHeight();
-		    log("childW= " + childW + " childH= " + childH);
+		    log("childW= " +  childW + " childH= " + childH);
 			child.layout(l1, t1, child.getWidth(), child.getHeight() + t1);
 			t1 = t1 + child.getHeight();
 		}
