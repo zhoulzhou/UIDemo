@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_minibar_pressed">#e1e4e6</color>
+    <color name="app_blue">#19a0e4</color>
+    <color name="color_transparent">#00000000</color>
+</resources>
