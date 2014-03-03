@@ -62,10 +62,11 @@ public class ViewContainer extends ViewGroup{
 		log("onmeasure");
 		setMeasuredDimension(MeasureSpec.getSize(widthMeasureSpec),MeasureSpec.getSize(heightMeasureSpec));
 		int count = getChildCount();
-//		for(int i=0; i<count; i++){
-//			View child = getChildAt(i);
-//			child.measure(widthMeasureSpec, heightMeasureSpec);
-//		}
+		for(int i=0; i<count; i++){
+			View child = getChildAt(i);
+			child.measure(View.MeasureSpec.makeMeasureSpec(widthMeasureSpec, MeasureSpec.EXACTLY),
+					View.MeasureSpec.makeMeasureSpec(heightMeasureSpec, MeasureSpec.EXACTLY));
+		}
 	}
 	
 	@Override
