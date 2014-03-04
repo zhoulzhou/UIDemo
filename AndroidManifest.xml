@@ -16,7 +16,7 @@
         android:debuggable="true"
         >
         <activity
-            android:name="com.example.uidemo.ui.betweenactivityanimation.BetweenActivityAnimationDemoActivity"
+            android:name="com.example.uidemo.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,5 +38,7 @@
             ></activity>
         
     </application>
+    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 </manifest>

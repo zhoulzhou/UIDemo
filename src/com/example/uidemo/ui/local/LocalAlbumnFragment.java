@@ -5,13 +5,18 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.uidemo.MainActivity;
 import com.example.uidemo.base.BaseFragment;
 
-public class LocalAlbumnFragment extends BaseFragment{
+public class LocalAlbumnFragment extends BaseFragment implements OnClickListener{
 	private Context mContext;
+	private Button mBtn;
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -26,7 +31,14 @@ public class LocalAlbumnFragment extends BaseFragment{
 		// TODO Auto-generated method stub
 		TextView tv = new TextView(mContext);
 		tv.setText("LOCAL ALBUMN");
-		return tv;
+		
+		mBtn = new Button(mContext);
+		mBtn.setText("btn");
+		LayoutParams params = new LayoutParams(60,60);
+		mBtn.setLayoutParams(params);
+		
+		mBtn.setOnClickListener(this);
+		return mBtn;
 	}
 
 	@Override
@@ -39,6 +51,14 @@ public class LocalAlbumnFragment extends BaseFragment{
 	public void onStartLoadData() {
 		// TODO Auto-generated method stub
 		super.onStartLoadData();
+	}
+
+	@Override
+	public void onClick(View v) {
+		if(v == mBtn){
+			BaseFragment fragment = new LocalFolderFragment();
+			MainActivity.getMain().doShowAction(fragment, true, null);
+		}
 	}
 	
 }

@@ -23,8 +23,6 @@ import android.widget.LinearLayout;
 import android.widget.Scroller;
 
 public class HorizontalAnimView extends ViewGroup{
-
-
 	private final static String TAG = "HorizontalAnimView";
 
 	ViewGroup mContainer;

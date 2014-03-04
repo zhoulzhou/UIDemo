@@ -1,6 +1,10 @@
 package com.example.uidemo;
 
+import java.lang.ref.SoftReference;
+
+import com.example.uidemo.base.BaseFragment;
 import com.example.uidemo.base.BaseFragmentActivity;
+import com.example.uidemo.ui.BasePopFragment;
 import com.example.uidemo.ui.VerticalAnimationView;
 import com.example.uidemo.ui.ViewManager;
 import com.example.uidemo.ui.playview.PlayingFragment;
@@ -18,11 +22,14 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
 	ViewGroup mCoreView;
 	ViewManager mViewManager;
 	private MainFragment mHomeFragment;
+	private static SoftReference<MainActivity> mMainRefrence;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		mMainRefrence = new SoftReference<MainActivity>(this);
 		
 		mBottomText = (TextView) findViewById(R.id.bottomview);
 		mBottomText.setOnClickListener(this);
@@ -30,6 +37,13 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
 		
 //		showPlayerView();
 		initViewManager();
+	}
+	
+	public static MainActivity getMain(){
+		if(mMainRefrence != null){
+			return mMainRefrence.get();
+		}
+		return null;
 	}
 	
 	private void initViewManager(){
@@ -59,6 +73,21 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
 			}
 			
 		}, 100);
+	}
+	
+	public void doShowAction(BaseFragment fragment, boolean save, Bundle data){
+		if(fragment == null){
+			return ;
+		}
+		BasePopFragment popFragment = new BasePopFragment();
+		popFragment.setArguments(data);
+		if(data != null){
+			Bundle extras = fragment.getArguments();
+			extras.putAll(data);
+		}
+		
+		popFragment.setFragment(fragment);
+		mViewManager.showPage(popFragment, true);
 	}
 
 	@Override

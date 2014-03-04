@@ -2,6 +2,7 @@ package com.example.uidemo.ui.local;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.uidemo.base.BaseFragment;
+import com.example.uidemo.ui.BasePopFragment;
 
 public class LocalFolderFragment extends BaseFragment{
 	private Context mContext;
@@ -26,6 +28,7 @@ public class LocalFolderFragment extends BaseFragment{
 		// TODO Auto-generated method stub
 		TextView tv = new TextView(mContext);
 		tv.setText("LOCAL FOLDER");
+		tv.setBackgroundColor(Color.RED);
 		return tv;
 	}
 
