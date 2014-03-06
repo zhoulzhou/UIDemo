@@ -84,20 +84,25 @@ public class LocalPlayer extends BasePlayer{
 			
 			mMediaPlayer.prepare();
 			mIsPrepared = true;
+			mIsError = false;
 			notifyBufferingUpdate(100);
 			
 			
 			} catch (IllegalArgumentException e) {
 				// TODO Auto-generated catch block
+				mIsError = true;
 				e.printStackTrace();
 			} catch (SecurityException e) {
 				// TODO Auto-generated catch block
+				mIsError = true;
 				e.printStackTrace();
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
+				mIsError = true;
 				e.printStackTrace();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
+				mIsError = true;
 				e.printStackTrace();
 			}
 			

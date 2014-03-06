@@ -150,7 +150,7 @@ public class MusicPlayer{
 	
 	public void setDataSource(Song ss){
 		Message msg = mHandler.obtainMessage(COMMAND_SETDATASOURCE, ss);
-		mHandler.sendEmptyMessage(COMMAND_SETDATASOURCE);
+		mHandler.sendMessage(msg);
 	}
 	
 	public void start(){
