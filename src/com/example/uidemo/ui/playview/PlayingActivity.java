@@ -59,7 +59,18 @@ public class PlayingActivity extends Activity{
 		
 //		initPlayer();
 		
-		new Thread(r).start();
+//		new Thread(r).start();
+		new Thread(new MyThread()).start();
+	}
+	
+	class MyThread implements Runnable{
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			initPlayer();
+		}
+		
 	}
 	
 	private Runnable r = new Runnable(){
