@@ -103,4 +103,26 @@ public class MainActivity extends BaseFragmentActivity implements OnClickListene
 		}
 	}
 
+	@Override
+	public void onBackPressed() {
+//		super.onBackPressed();
+		
+		if(mPlayView != null && mPlayView.getScrollY() != 0){
+			hidePlayerView();
+			return ;
+		}
+		
+		if(!mViewManager.getCurrentFragment().dispatchBackPressed()){
+			mininumApp();
+		}
+	}
+	
+	private void mininumApp(){
+		this.moveTaskToBack(true);
+	}
+	
+	private void hidePlayerView(){
+		mPlayView.snapToScreen(0);
+	}
+
 }
