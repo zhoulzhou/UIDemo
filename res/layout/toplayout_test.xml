@@ -29,5 +29,12 @@
 
        
     </com.example.uidemo.ui.view.TopLayout>
+    
+   <Button 
+       android:id="@+id/btn"
+       android:layout_width="60dip"
+       android:layout_height="30dip"
+       android:text="btn"
+       />
 
 </RelativeLayout>
