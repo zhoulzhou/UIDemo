@@ -7,5 +7,8 @@
     <!-- popumenu -->
     <dimen name="ui_popup_item_separator_padding">12dp</dimen>
     <dimen name="ui_title_bar_height">60dp</dimen>
+    
+    
+    <dimen name="top_one_view_height">60dip</dimen>
 
 </resources>
