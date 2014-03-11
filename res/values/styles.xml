@@ -27,5 +27,13 @@
     <item name="selectedColor">#FFE6E6E6</item>  
     <item name="selectedBold">false</item> 
     </style>
+    
+    <!-- 文字阴影 -->  
+    <style name="recmd_detail_text"> 
+     <item name="android:shadowColor">#cc000000</item>  
+     <item name="android:shadowDx">0</item>  
+     <item name="android:shadowDy">2</item>  
+     <item name="android:shadowRadius">1</item> 
+    </style>
 
 </resources>
