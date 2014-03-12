@@ -1,12 +1,15 @@
 package com.example.uidemo.ui.online.view;
 
+import com.example.uidemo.R;
+
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 public class ItemBaseView extends RelativeLayout{
-	ImageView mClickImage = null;
+	ImageView mImage = null;
 	ImageView mBackground = null;
 	ImageView mTagImage = null;
 	
@@ -51,13 +54,18 @@ public class ItemBaseView extends RelativeLayout{
 	
 	public void updateImages(){
 		b_updated = true;
+		b_onsized = true;
+		log("updateImages b_updated= " + b_updated + " b_onsized= " + b_onsized);
 		if(b_onsized && b_updated){
 			LoadImage(mPicUrl);
 		}
 	}
 	
 	private void LoadImage(String url){
+		log("load image");
 		if(url == null){
+			log("url is null");
+			mImage.setBackgroundResource(R.drawable.booting);
 			return ;
 		}
 		//load background image
@@ -81,5 +89,9 @@ public class ItemBaseView extends RelativeLayout{
 		if (b_onsized && b_updated)
 
 			LoadImage(mPicUrl);
+	}
+	
+	private void log(String s){
+		Log.d("zhou",s);
 	}
 }
