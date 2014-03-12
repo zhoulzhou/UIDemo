@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 public class ViewTestActivity extends Activity{
 	ItemView mItem;
 	ViewGroup mLayout;
-    boolean mGo = true;
+    boolean mGo = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

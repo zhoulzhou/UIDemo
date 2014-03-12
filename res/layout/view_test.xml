@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff2f4f5" >
-   <!-- 
+ 
     <com.example.uidemo.ui.online.view.ItemView
         android:id="@+id/item1"
         android:layout_width="300dip"
         android:layout_height="300dip"
         android:background="@color/app_blue"
     />
-  -->
+
     
      <RelativeLayout 
          android:id="@+id/layout"
