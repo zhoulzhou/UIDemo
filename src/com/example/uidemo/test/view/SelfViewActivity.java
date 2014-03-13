@@ -1,6 +1,10 @@
 package com.example.uidemo.test.view;
 
+import java.util.ArrayList;
+
 import com.example.uidemo.R;
+import com.example.uidemo.test.view.SelfView.SelfAdapter;
+import com.example.uidemo.ui.online.view.ItemData;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -21,6 +25,22 @@ public class SelfViewActivity extends Activity{
 		setContentView(mSelfView);
 		
 		mSelfView.setText("title***t");
+		
+		SelfAdapter adapter = new SelfAdapter();
+		adapter.setActivity(this);
+		adapter.getData().addAll(cData());
+		
+		mSelfView.mList.setAdapter(adapter);
+	}
+	
+	private ArrayList<ItemData> cData(){
+		ArrayList<ItemData> data = new ArrayList<ItemData>();
+		for (int i=0; i<5; i++){
+			ItemData item = new ItemData();
+			item.title = ("title*** " + i);
+			data.add(item);
+		}
+		return data;
 	}
 	
 }

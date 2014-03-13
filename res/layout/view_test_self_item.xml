@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.uidemo.test.view.SelfViewItem xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="60dip"
+    android:background="#fff2f4f5" 
+    android:orientation="horizontal"
+    >
+    
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+     <ImageView 
+         android:id="@+id/image_item"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/ic_launcher"
+         />
+
+     <TextView
+         android:id="@+id/text_item"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="10dip"
+         android:layout_gravity="center"
+         android:text="item text" />
+     
+     </LinearLayout>
+     
+</com.example.uidemo.test.view.SelfViewItem>

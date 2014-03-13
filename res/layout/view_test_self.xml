@@ -19,4 +19,12 @@
          android:textSize="12dip"
          android:text="sfakssxxx"
          />
+     
+     <ListView 
+         android:id="@+id/list"
+         android:layout_below="@id/text"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         >
+     </ListView>
     </com.example.uidemo.test.view.SelfView>
