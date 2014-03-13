@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.example.uidemo.R;
 import com.example.uidemo.ui.online.view.ItemData;
+import com.example.uidemo.view.widget.BDListView;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -22,7 +23,7 @@ import android.view.ViewGroup;
 public class SelfView extends RelativeLayout implements OnClickListener{
 	TextView mText;
 	ImageView mImage;
-	ListView mList;
+	BDListView mList;
 
 	public SelfView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
@@ -53,7 +54,7 @@ public class SelfView extends RelativeLayout implements OnClickListener{
 		
 		mImage = (ImageView) findViewById(R.id.image);
 		mText = (TextView) findViewById(R.id.text);
-		mList = (ListView) findViewById(R.id.list);
+		mList = (BDListView) findViewById(R.id.list);
 		
 		mImage.setOnClickListener(this);
 		
