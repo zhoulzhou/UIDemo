@@ -28,6 +28,8 @@ public class ListViewActivity extends Activity{
 		
 		TestAdapter adapter = new TestAdapter();
 		mList.setAdapter(adapter);
+		
+		//test git
 	}
 	
 	public class TestAdapter extends BaseAdapter{
