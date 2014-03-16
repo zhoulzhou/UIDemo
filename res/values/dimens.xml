@@ -10,5 +10,7 @@
     
     
     <dimen name="top_one_view_height">60dip</dimen>
+    
+    <dimen name="margin">10dp</dimen>
 
 </resources>
