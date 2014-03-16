@@ -7,7 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.uidemo.R;
 import com.example.uidemo.base.BaseFragment;
+import com.example.uidemo.widget.waterfall.StaggeredGridView;
+import com.example.uidemo.widget.waterfall.test.MainActivity;
+import com.example.uidemo.widget.waterfall.test.StaggeredAdapter;
+import com.example.uidemo.widget.waterfall.test.Utils;
 
 public class OnlinePlayListFragment extends BaseFragment{
 
@@ -22,9 +27,8 @@ public class OnlinePlayListFragment extends BaseFragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		TextView tv = new TextView(getActivity());
-		tv.setText("play list");
-		return tv;
+		View v = inflater.inflate(R.layout.waterfall_main, null);
+		return v;
 	}
 
 	@Override
@@ -49,6 +53,19 @@ public class OnlinePlayListFragment extends BaseFragment{
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onViewCreated(view, savedInstanceState);
+		
+        StaggeredGridView gridView = (StaggeredGridView) view.findViewById(R.id.staggeredGridView1);
+		
+		int margin = getResources().getDimensionPixelSize(R.dimen.margin);
+		
+		gridView.setItemMargin(margin); // set the GridView margin
+		
+		gridView.setPadding(margin, 0, margin, 0); // have the margin on the sides as well 
+		
+		StaggeredAdapter adapter = new StaggeredAdapter(getActivity(), R.id.imageView1, Utils.urls);
+		
+		gridView.setAdapter(adapter);
+		adapter.notifyDataSetChanged();
 	}
 	
 
