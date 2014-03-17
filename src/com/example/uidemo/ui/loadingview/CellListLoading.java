@@ -43,8 +43,8 @@ public class CellListLoading extends RelativeLayout{
 		super.onFinishInflate();
 		net = findViewById(R.id.net);
 		empty = findViewById(R.id.empty);
-		loading = findViewById(R.id.loadingview);
-		
+		loading = findViewById(R.id.loading);
+		try{
 		netImage = (ImageView) findViewById(R.id.netImage);
 		netText = (TextView) findViewById(R.id.netTitle);
 		netSubText = (TextView) findViewById(R.id.netSubTitle);
@@ -60,6 +60,9 @@ public class CellListLoading extends RelativeLayout{
 		loading.setVisibility(View.VISIBLE);
 		net.setVisibility(View.GONE);
 		empty.setVisibility(View.GONE);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	public void showLoading(){

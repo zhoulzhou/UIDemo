@@ -68,5 +68,13 @@ public class LocalFavFragment extends BaseFragment{
 		// TODO Auto-generated method stub
 		super.onStartLoadData();
 	}
+
+	@Override
+	public void onDestroyView() {
+		// TODO Auto-generated method stub
+		super.onDestroyView();
+		mText = null;
+		mLoadView = null;
+	}
 	
 }

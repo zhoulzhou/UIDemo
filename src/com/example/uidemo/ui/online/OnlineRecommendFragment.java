@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,7 @@ import com.example.uidemo.ui.online.view.ItemData;
 import com.example.uidemo.ui.online.view.RecmdDailyView;
 
 public class OnlineRecommendFragment extends BaseFragment{
-
+    private Handler mhandler = new Handler();
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -67,6 +68,20 @@ public class OnlineRecommendFragment extends BaseFragment{
 		}
 		
 		((RecmdDailyView) v).updateViews(datas);
+	}
+	
+	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		//是否对用户可见 决定一些view的动画是否执行
+//		if (isVisibleToUser) {
+//			if (mFocusImgView != null) {
+//				mFocusImgView.startScroll();
+//			}
+//		} else {
+//			if (mFocusImgView != null) {
+//				mFocusImgView.stopScroll();
+//			}
+//		}
 	}
 
 	@Override
