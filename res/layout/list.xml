@@ -10,11 +10,18 @@
         android:layout_height="match_parent"
         />
     
-    <!--  下面可以增加LoadingView  -->
+    <!--  下面可以增加LoadingView  
     <com.example.uidemo.ui.loadingview.CellListLoading 
         android:id="@+id/loadingview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         ></com.example.uidemo.ui.loadingview.CellListLoading>
+    -->
+     <include
+        android:id="@+id/loadingview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/loading_layout"
+        android:paddingTop="77dip" />
     
 </FrameLayout>

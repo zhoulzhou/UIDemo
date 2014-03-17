@@ -13,10 +13,13 @@ import android.widget.TextView;
 import com.example.uidemo.base.BaseFragment;
 import com.example.uidemo.ui.online.view.ItemData;
 import com.example.uidemo.ui.online.view.RecmdDailyView;
+import com.example.uidemo.widget.mergeadapter.MergeAdapter;
 
-public class OnlineRecommendFragment extends BaseFragment{
+public class OnlineRecommendFragment extends OnlineBaseListFragment{
     private Handler mhandler = new Handler();
-
+    RecmdDailyView mRemdDailyView;
+    MergeAdapter mAdapter;
+    
 	@Override
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
@@ -29,7 +32,7 @@ public class OnlineRecommendFragment extends BaseFragment{
 		// TODO Auto-generated method stub
 		TextView tv = new TextView(getActivity());
 		tv.setText("recommend list");
-		return setRecmdDailyView();
+		return super.onCreateView(inflater, container, savedInstanceState);
 	}
 	
 	private RecmdDailyView setRecmdDailyView(){
@@ -52,7 +55,7 @@ public class OnlineRecommendFragment extends BaseFragment{
 		return v;
 	}
 	
-	private void setRecmdDailyView(View v){
+	private void setRecmdDailyViewData(RecmdDailyView v){
 		
 		ArrayList<ItemData> datas = new ArrayList<ItemData>();
 		for(int i=0; i<6; i++){
@@ -67,7 +70,7 @@ public class OnlineRecommendFragment extends BaseFragment{
 			datas.add(data);
 		}
 		
-		((RecmdDailyView) v).updateViews(datas);
+		v.updateViews(datas);
 	}
 	
 	@Override
@@ -106,7 +109,22 @@ public class OnlineRecommendFragment extends BaseFragment{
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onViewCreated(view, savedInstanceState);
+		mRemdDailyView = new RecmdDailyView(getActivity());
+		mAdapter = new MergeAdapter();
+		
+		mAdapter.addView(mRemdDailyView);
+		
+		mListView.setAdapter(mAdapter);
 	}
+
+	@Override
+	public void onStartLoadData() {
+		// TODO Auto-generated method stub
+		super.onStartLoadData();
+		setRecmdDailyViewData(mRemdDailyView);
+		onLoadFinish();
+	}
+	
 	
 
 }

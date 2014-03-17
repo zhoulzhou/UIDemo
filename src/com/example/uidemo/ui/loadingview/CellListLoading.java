@@ -41,9 +41,9 @@ public class CellListLoading extends RelativeLayout{
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();
-		net = findViewById(R.id.net);
-		empty = findViewById(R.id.empty);
-		loading = findViewById(R.id.loading);
+		net = (View) findViewById(R.id.net);
+		empty = (View) findViewById(R.id.empty);
+		loading = (View) findViewById(R.id.loading);
 		try{
 		netImage = (ImageView) findViewById(R.id.netImage);
 		netText = (TextView) findViewById(R.id.netTitle);
