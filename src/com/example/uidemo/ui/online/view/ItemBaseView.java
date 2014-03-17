@@ -19,6 +19,8 @@ public class ItemBaseView extends RelativeLayout{
 	
 	//image loader
 //   ImageFetcher mImageFetcher;
+	
+	protected int mPosition;//布局视图位置
 
 	public ItemBaseView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
@@ -64,8 +66,8 @@ public class ItemBaseView extends RelativeLayout{
 	private void LoadImage(String url){
 		log("load image");
 		if(url == null){
-			log("url is null");
-			mImage.setBackgroundResource(R.drawable.booting);
+			log("url is null and set image");
+			mImage.setBackgroundResource(R.drawable.ic_launcher);
 			return ;
 		}
 		//load background image
@@ -89,6 +91,10 @@ public class ItemBaseView extends RelativeLayout{
 		if (b_onsized && b_updated)
 
 			LoadImage(mPicUrl);
+	}
+	
+	public void setViewPosition(int position){
+		mPosition = position;
 	}
 	
 	private void log(String s){

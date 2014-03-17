@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Recommand"
+        android:gravity="bottom"
+        android:paddingBottom="4dip"
+        android:textSize="15dip"
+        />
+    
+    <RelativeLayout 
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        >
+        
+        <RelativeLayout 
+            android:id="@+id/group_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="8dip"
+            >
+        </RelativeLayout>
+        <RelativeLayout 
+            android:id="@+id/group_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/group_one"
+            android:layout_alignParentRight="true"
+            >
+            
+        </RelativeLayout>
+        <RelativeLayout 
+            android:id="@+id/group_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/group_two"
+            android:layout_toRightOf="@id/group_one"
+            android:layout_marginTop="8dip"
+            >
+            
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:id="@+id/group_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/group_one"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="8dip"
+            >
+            
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:id="@+id/group_five"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/group_four"
+            android:layout_below="@id/group_one"
+            android:layout_marginLeft="8dip"
+            android:layout_alignTop="@id/group_four"
+            >
+            
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:id="@+id/group_six"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/group_five"
+            android:layout_below="@id/group_three"
+            android:layout_marginLeft="8dip"
+            android:layout_alignTop="@id/group_four"
+            >
+            
+        </RelativeLayout>
+        
+        
+    </RelativeLayout>
+    
+</RelativeLayout>

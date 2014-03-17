@@ -54,6 +54,7 @@ public class ItemView extends ItemBaseView{
 			
 			@Override
 			public void onClick(View v) {
+				
 				onItemClick();
 				
 			}
@@ -62,6 +63,7 @@ public class ItemView extends ItemBaseView{
 	
 	public void onItemClick(){
 		log("item click");
+		// mData 获取数据展示点击后的view
 	}
 	
 	public void updateViews(ItemData data, boolean big){

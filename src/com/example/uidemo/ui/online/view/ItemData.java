@@ -4,7 +4,7 @@ public class ItemData{
 	public String picUrl;
 	public String title;
 	public String listnum;
-	
+	public int type ;
 	
 	@Override
 	public String toString() {
