@@ -16,7 +16,7 @@
         android:debuggable="true"
         >
         <activity
-            android:name="com.example.uidemo.ui.online.view.ViewTestActivity"
+            android:name="com.example.uidemo.SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
