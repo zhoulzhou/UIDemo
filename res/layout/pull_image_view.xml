@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/notification"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:text="没有歌曲"
+        android:textColor="#bebebe"
+        android:textSize="16dip"
+        android:visibility="gone" />
+
+    <com.example.uidemo.view.widget.BDPullListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.example.uidemo.view.widget.BDPullListView>>
+
+  
+
+    <!-- 顶部阴影: 含返回按钮 -->
+
+    <RelativeLayout
+        android:id="@+id/info_top_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true">
+
+        <!-- 返回按钮 -->
+
+        <TextView
+            android:id="@+id/head_title_bar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:maxWidth="270dp"
+            android:paddingLeft="30dip"
+            android:singleLine="true"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/head_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:paddingBottom="15dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="75dp"
+            android:paddingTop="15dp"/>
+        <!-- 收缩时显示titlebar -->
+
+
+        <!-- 右侧数目 -->
+
+        <LinearLayout
+            android:id="@+id/head_title_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="13dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:paddingLeft="8dp"
+                android:paddingRight="2dp"
+                android:paddingTop="3dp"/>
+            <!-- 播放数 -->
+
+            <TextView
+                android:id="@+id/head_play_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="000"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:paddingLeft="8dp"
+                android:paddingRight="2dp"
+                android:paddingTop="3dp" />
+            <!-- 收藏数 -->
+
+            <TextView
+                android:id="@+id/head_fav_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0X4"
+                android:textColor="#ffffff"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </RelativeLayout>
+<!-- android:layout_below="@id/info_top_layout" -->
+ 
+
+    <TextView
+        android:id="@+id/notification"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:text="没有歌曲"
+        android:textColor="#bebebe"
+        android:textSize="16dip"
+        android:visibility="gone" />
+
+
+    
+</FrameLayout>

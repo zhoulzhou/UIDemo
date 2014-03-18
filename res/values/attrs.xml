@@ -17,4 +17,8 @@
         <attr name="itemMargin" format="dimension" />
     </declare-styleable>
     
+  <declare-styleable name="pullImage">
+        <attr name="initHeight" format="integer" />
+    </declare-styleable>
+    
 </resources>

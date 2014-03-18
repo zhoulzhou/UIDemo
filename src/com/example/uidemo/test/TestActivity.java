@@ -2,6 +2,7 @@ package com.example.uidemo.test;
 
 import com.example.uidemo.R;
 import com.example.uidemo.test.view.AutoScrollViewpagerFragment;
+import com.example.uidemo.test.view.ListPullImageViewFragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -22,7 +23,10 @@ public class TestActivity extends FragmentActivity{
 		setContentView(R.layout.test_main);
 		
 		AutoScrollViewpagerFragment f = new AutoScrollViewpagerFragment();
-		setFragment(f,true);
+		
+		ListPullImageViewFragment f1 = new ListPullImageViewFragment();
+		
+		setFragment(f1,true);
 	}
 	
 	private  void setFragment(Fragment fragment, boolean save){
