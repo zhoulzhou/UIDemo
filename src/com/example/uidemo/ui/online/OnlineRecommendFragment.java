@@ -115,6 +115,10 @@ public class OnlineRecommendFragment extends OnlineBaseListFragment{
 		mAdapter.addView(mRemdDailyView);
 		
 		mListView.setAdapter(mAdapter);
+		
+		setRecmdDailyViewData(mRemdDailyView);
+		
+		onLoadFinish();
 	}
 
 	@Override
@@ -122,7 +126,7 @@ public class OnlineRecommendFragment extends OnlineBaseListFragment{
 		// TODO Auto-generated method stub
 		super.onStartLoadData();
 		setRecmdDailyViewData(mRemdDailyView);
-		onLoadFinish();
+//		onLoadFinish();
 	}
 	
 	
