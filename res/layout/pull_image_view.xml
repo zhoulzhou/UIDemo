@@ -19,7 +19,27 @@
         android:layout_height="match_parent" >
     </com.example.uidemo.view.widget.BDPullListView>>
 
-  
+  <FrameLayout
+        android:id="@+id/titleimagelayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:layout_alignParentTop="true"
+        android:visibility="visible" 
+        android:background="@color/app_blue"
+        >
+
+        <com.example.uidemo.view.widget.BDTitleImageView
+            android:id="@+id/titleimage"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:visibility="gone"
+            />
+    </FrameLayout>
 
     <!-- 顶部阴影: 含返回按钮 -->
 
@@ -27,7 +47,9 @@
         android:id="@+id/info_top_layout"
         android:layout_width="fill_parent"
         android:layout_height="48dp"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        >
 
         <!-- 返回按钮 -->
 

@@ -7,16 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.example.uidemo.R;
 import com.example.uidemo.base.BaseFragment;
 import com.example.uidemo.view.widget.BDListView;
 import com.example.uidemo.view.widget.BDPullHeaderLayout;
 import com.example.uidemo.view.widget.BDPullListView;
+import com.example.uidemo.view.widget.BDTitleImageView;
 
 public class ListPullImageViewFragment extends BaseFragment{
 	BDPullListView mListView;
 	BDPullHeaderLayout mHeaderView;
+	BDTitleImageView mTitleImageView;
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -33,15 +36,21 @@ public class ListPullImageViewFragment extends BaseFragment{
 		mListView = (BDPullListView) v.findViewById(R.id.listview);
 		mListView.requestFocus();
 		
+		mTitleImageView = (BDTitleImageView) v.findViewById(R.id.titleimage);
+		
 		// 设置imageView, 作为弹性下拉
 		mListView.setHeadView(mHeaderView);
 		mListView.setHeaderImageView(mHeaderView.getPullImage());
 		
 		TestAdapter ap = new TestAdapter(getActivity());
+		TextView tv = new TextView(getActivity());
+		tv.setText("head view");
+		mListView.addHeaderView(tv);
 		
 		mListView.setAdapter(ap);
 		
-		mHeaderView.getPullImage().setImageResource(R.drawable.ic_launcher);
+//		mHeaderView.getPullImage().setImageResource(R.drawable.ic_launcher);
+//		mTitleImageView.setImageDrawable(mHeaderView.getPullImage().getDrawable());
 //		mHeaderView.onFinishInflate();
 		return v;
 	}
@@ -56,6 +65,7 @@ public class ListPullImageViewFragment extends BaseFragment{
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onViewCreated(view, savedInstanceState);
+		mHeaderView.getPullImage().setBackgroundResource(R.drawable.ic_launcher);
 	}
 	
 	public class TestAdapter extends BaseAdapter{
