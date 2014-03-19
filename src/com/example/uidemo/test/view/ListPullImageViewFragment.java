@@ -3,9 +3,14 @@ package com.example.uidemo.test.view;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -14,9 +19,10 @@ import com.example.uidemo.base.BaseFragment;
 import com.example.uidemo.view.widget.BDListView;
 import com.example.uidemo.view.widget.BDPullHeaderLayout;
 import com.example.uidemo.view.widget.BDPullListView;
+import com.example.uidemo.view.widget.BDPullListView.OnTouchUpListener;
 import com.example.uidemo.view.widget.BDTitleImageView;
 
-public class ListPullImageViewFragment extends BaseFragment{
+public class ListPullImageViewFragment extends BaseFragment implements OnScrollListener{
 	BDPullListView mListView;
 	BDPullHeaderLayout mHeaderView;
 	BDTitleImageView mTitleImageView;
@@ -46,6 +52,26 @@ public class ListPullImageViewFragment extends BaseFragment{
 		TextView tv = new TextView(getActivity());
 		tv.setText("head view");
 		mListView.addHeaderView(tv);
+		
+		mListView.setOnScrollListener(this);
+		mListView.setOnTouchUpListener(new OnTouchUpListener() {
+			@Override
+			public void onTouchUp(int downTop) {
+				// TODO Auto-generated method stub
+				log("touch up");
+			}
+		});
+		
+		mListView.setOnItemClickListener(new OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				log("item click position= " + arg2);
+			}
+			
+		});
 		
 		mListView.setAdapter(ap);
 		
@@ -78,7 +104,7 @@ public class ListPullImageViewFragment extends BaseFragment{
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return 10;
+			return 30;
 		}
 
 		@Override
@@ -102,6 +128,26 @@ public class ListPullImageViewFragment extends BaseFragment{
 			return convertView;
 		}
 		
+	}
+
+	@Override
+	public void onScroll(AbsListView view, int firstVisibleItem,
+			int visibleItemCount, int totalItemCount) {
+		// TODO Auto-generated method stub
+		log("onscroll firstVisibleItem= " + firstVisibleItem + " visibleItemCount= " + visibleItemCount +
+		            " totalItemCount= " + totalItemCount);
+	}
+
+	@Override
+	public void onScrollStateChanged(AbsListView view, int scrollState) {
+		// TODO Auto-generated method stub
+		if(scrollState != SCROLL_STATE_FLING){
+			log("not fling  scrollState= " + scrollState );
+		}
+	}
+	
+	private void log(String s){
+		Log.d("zhou",s);
 	}
 	
 }
