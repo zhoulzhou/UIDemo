@@ -2,6 +2,7 @@ package com.example.uidemo.test.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -97,12 +98,14 @@ public class ListPullImageViewFragment extends BaseFragment implements OnScrollL
 		mHeadTitleBar.setVisibility(View.VISIBLE);
 		mHeadBar.setVisibility(View.GONE);
 		mImageBar.setVisibility(View.GONE);
+		mTitleImageView.setImageDrawable(new ColorDrawable());
 	}
 	
 	private void showBar(){
 		mHeadTitleBar.setVisibility(View.GONE);
 		mHeadBar.setVisibility(View.VISIBLE);
 		mImageBar.setVisibility(View.VISIBLE);
+		mTitleImageView.setImageDrawable(mHeaderView.getPullImage().getDrawable());
 	}
 
 	@Override
