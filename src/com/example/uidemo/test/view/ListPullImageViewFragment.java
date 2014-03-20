@@ -2,6 +2,7 @@ package com.example.uidemo.test.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.uidemo.R;
@@ -31,6 +33,11 @@ public class ListPullImageViewFragment extends BaseFragment implements OnScrollL
 	View mHeadBar;
 	View mHeadTitleBar;
 	View mImageBar;
+	
+	ViewGroup mHeadInfoLayout;
+	ViewGroup mHeadTitleNum;
+	
+	int mTopTitleHeight;
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -52,6 +59,9 @@ public class ListPullImageViewFragment extends BaseFragment implements OnScrollL
 		
 		mHeadBar = (View) v.findViewById(R.id.head_bar);
 		mHeadTitleBar = (View) v.findViewById(R.id.info_top_layout);
+		mTopTitleHeight = mHeadTitleBar.getLayoutParams().height;
+		
+		mHeadTitleNum = (ViewGroup) v.findViewById(R.id.head_title_num);
 		
 		// 设置imageView, 作为弹性下拉
 		mListView.setHeadView(mHeaderView);
@@ -167,9 +177,55 @@ public class ListPullImageViewFragment extends BaseFragment implements OnScrollL
 			log("show bar");
 			showBar();
 			
+			float a = 1;
+			doAlpha(1-a,(ViewGroup) mHeaderView.findViewById(R.id.info_bottom_layout));
+			doAlpha(1-a, mHeadTitleNum);
+			
 		}else if(firstVisibleItem == 0 && mListView.getChildCount() > 1){
 			log("hide bar");
-			hideBar();
+			int top = mListView.getChildAt(1).getTop();
+			log("top= " + top + " mTopTitleHeight= " + mTopTitleHeight);
+			int top1 = mListView.getChildAt(0).getTop();
+			log("top1= " + top1);
+			int top2 = mListView.getTop();
+			log("top2= " + top2);
+			if(top < mTopTitleHeight){
+				showBar();
+			}else{
+				hideBar();
+			}
+			
+			int h = mHeaderView.getHeight();
+			float a = 0 - mHeaderView.getTop()*1f / h;
+			log("h= " + h + " a= " + a + " headview top= " + mHeaderView.getTop());
+			doAlpha(1-a,(ViewGroup) mHeaderView.findViewById(R.id.info_bottom_layout));
+			doAlpha(1-a, mHeadTitleNum);
+		}
+	}
+	
+	private void doAlpha(float a, ViewGroup vg){
+		int count = vg.getChildCount();
+		log("count= " + count);
+		for(int i=0; i<count; i++){
+			View v = vg.getChildAt(i);
+			if(android.os.Build.VERSION.SDK_INT > 11){
+				log("sdk > 11");
+				v.setAlpha(a);
+			}else{
+				if(v instanceof TextView){
+					TextView tv = (TextView) v;
+					tv.setTextColor( Color.argb( (int) (255*a), 255, 255, 255));
+				}else if(v instanceof ImageView){
+					ImageView iv = (ImageView) v;
+					iv.setAlpha(255*a);
+				}
+			}
+			
+			if( a < 0.5f){
+				v.setVisibility(View.INVISIBLE);
+			}else{
+				v.setVisibility(View.VISIBLE);
+			}
 		}
 	}
 

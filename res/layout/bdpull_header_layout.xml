@@ -9,6 +9,88 @@
         android:layout_height="wrap_content"
         android:padding="0.0dip"
         android:scaleType="centerCrop" />
+    
+    <RelativeLayout
+        android:id="@+id/info_bottom_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_alignBottom="@id/image"
+        >
+
+        <!-- 全部播放 -->
+
+        <ImageView
+            android:id="@+id/head_play_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="18dip"
+            android:layout_marginRight="16dip" 
+            android:src="@drawable/ic_launcher"
+            />
+
+        <!-- 分享 -->
+
+        <ImageView
+            android:id="@+id/head_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/head_play_all"
+            android:layout_alignTop="@id/head_play_all"
+            android:layout_marginRight="16dip"
+            android:layout_toLeftOf="@id/head_play_all" 
+            android:src="@drawable/ic_launcher"
+            />
+
+        <!-- 标签 -->
+
+        <ImageView
+            android:id="@+id/head_img_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="20dp"
+            android:background="@null"
+            android:paddingLeft="14dip"
+            android:paddingTop="4dp"
+            
+             />
+
+        <TextView
+            android:id="@+id/head_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/head_img_tag"
+            android:layout_alignTop="@id/head_img_tag"
+            android:layout_marginLeft="3dp"
+            android:layout_toLeftOf="@id/head_share"
+            android:layout_toRightOf="@id/head_img_tag"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:singleLine="true"
+            android:text="歌单tag"
+            android:textSize="12dp" />
+
+        <!-- 标题 -->
+
+        <TextView
+            android:id="@+id/head_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/head_tag"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="0dp"
+            android:layout_toLeftOf="@id/head_share"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:paddingBottom="0dp"
+            android:paddingLeft="16dip"
+            android:singleLine="true"
+            android:text="歌单标题"
+            android:textSize="18dp" />
+    </RelativeLayout>
 
 
 </com.example.uidemo.view.widget.BDPullHeaderLayout>
