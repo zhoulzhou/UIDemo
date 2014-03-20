@@ -43,6 +43,7 @@ public class ListPullImageViewFragment extends BaseFragment implements OnScrollL
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
 		super.onAttach(activity);
+		//commit test
 	}
 
 	@Override
