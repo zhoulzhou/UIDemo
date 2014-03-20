@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dip"
         android:layout_alignParentTop="true"
-        android:visibility="visible" 
+        android:visibility="gone" 
         android:background="@color/app_blue"
         >
 
@@ -48,7 +48,7 @@
         android:layout_width="fill_parent"
         android:layout_height="48dp"
         android:layout_alignParentTop="true"
-        android:visibility="gone"
+        android:visibility="visible"
         >
 
         <!-- 返回按钮 -->
@@ -65,7 +65,9 @@
             android:singleLine="true"
             android:textColor="#ffffff"
             android:textSize="18dp"
-            android:visibility="visible" />
+            android:visibility="visible" 
+            android:text="title title"
+            />
 
         <ImageView
             android:id="@+id/head_return"
@@ -105,7 +107,7 @@
                 android:id="@+id/head_play_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="000"
+                android:text="00**00"
                 android:textColor="#ffffff"
                 android:textSize="12dp" />
 
@@ -122,13 +124,21 @@
                 android:id="@+id/head_fav_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0X4"
+                android:text="0XXX4"
                 android:textColor="#ffffff"
                 android:textSize="12dp" />
         </LinearLayout>
     </RelativeLayout>
 <!-- android:layout_below="@id/info_top_layout" -->
  
+    <include 
+        android:id="@+id/head_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dip"
+        layout="@layout/pull_iamge_view_header"
+        android:visibility="gone"
+        />
 
     <TextView
         android:id="@+id/notification"

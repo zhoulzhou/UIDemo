@@ -26,6 +26,10 @@ public class ListPullImageViewFragment extends BaseFragment implements OnScrollL
 	BDPullListView mListView;
 	BDPullHeaderLayout mHeaderView;
 	BDTitleImageView mTitleImageView;
+	
+	View mHeadBar;
+	View mHeadTitleBar;
+	View mImageBar;
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -42,7 +46,11 @@ public class ListPullImageViewFragment extends BaseFragment implements OnScrollL
 		mListView = (BDPullListView) v.findViewById(R.id.listview);
 		mListView.requestFocus();
 		
+		mImageBar = (View) v.findViewById(R.id.titleimagelayout);
 		mTitleImageView = (BDTitleImageView) v.findViewById(R.id.titleimage);
+		
+		mHeadBar = (View) v.findViewById(R.id.head_bar);
+		mHeadTitleBar = (View) v.findViewById(R.id.info_top_layout);
 		
 		// 设置imageView, 作为弹性下拉
 		mListView.setHeadView(mHeaderView);
@@ -51,7 +59,11 @@ public class ListPullImageViewFragment extends BaseFragment implements OnScrollL
 		TestAdapter ap = new TestAdapter(getActivity());
 		TextView tv = new TextView(getActivity());
 		tv.setText("head view");
+		
+		View view = LayoutInflater.from(getActivity()).inflate(R.layout.pull_iamge_view_header, null);
+		mListView.addHeaderView(view, null, false);
 		mListView.addHeaderView(tv);
+		
 		
 		mListView.setOnScrollListener(this);
 		mListView.setOnTouchUpListener(new OnTouchUpListener() {
@@ -79,6 +91,18 @@ public class ListPullImageViewFragment extends BaseFragment implements OnScrollL
 //		mTitleImageView.setImageDrawable(mHeaderView.getPullImage().getDrawable());
 //		mHeaderView.onFinishInflate();
 		return v;
+	}
+	
+	private void hideBar(){
+		mHeadTitleBar.setVisibility(View.VISIBLE);
+		mHeadBar.setVisibility(View.GONE);
+		mImageBar.setVisibility(View.GONE);
+	}
+	
+	private void showBar(){
+		mHeadTitleBar.setVisibility(View.GONE);
+		mHeadBar.setVisibility(View.VISIBLE);
+		mImageBar.setVisibility(View.VISIBLE);
 	}
 
 	@Override
@@ -136,6 +160,14 @@ public class ListPullImageViewFragment extends BaseFragment implements OnScrollL
 		// TODO Auto-generated method stub
 		log("onscroll firstVisibleItem= " + firstVisibleItem + " visibleItemCount= " + visibleItemCount +
 		            " totalItemCount= " + totalItemCount);
+		if(firstVisibleItem > 0){
+			log("show bar");
+			showBar();
+			
+		}else if(firstVisibleItem == 0 && mListView.getChildCount() > 1){
+			log("hide bar");
+			hideBar();
+		}
 	}
 
 	@Override
