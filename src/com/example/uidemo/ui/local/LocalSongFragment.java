@@ -36,12 +36,12 @@ public class LocalSongFragment extends TabLocalFragment{
 		// TODO Auto-generated method stub
 		mFactory = new SongListViewFactory();
 		super.onViewCreated(view, savedInstanceState);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		showContainerView();
 	}
 
