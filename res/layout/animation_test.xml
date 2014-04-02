@@ -19,4 +19,21 @@
        android:text="btn"
        />
    
+   <ImageView
+        android:id="@+id/guide_img_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/guide_img_song" 
+        />
+   
+   <com.example.uidemo.logic.render.CGLView 
+       android:id="@+id/glview"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:layout_centerInParent="true"
+       android:layout_alignBottom="@id/guide_img_song"
+       android:layout_alignTop="@id/guide_img_song"
+       />
+   
 </RelativeLayout>
